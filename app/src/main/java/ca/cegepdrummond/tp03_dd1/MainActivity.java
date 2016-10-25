@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
+    private BDHelper bdHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
