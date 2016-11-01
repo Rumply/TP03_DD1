@@ -11,7 +11,99 @@
     tools:context="ca.cegepdrummond.tp03_dd1.MainActivity">
 
     <TextView
+        android:id="@+id/name_timer"
+        android:text="@string/name_timer"
+        android:textSize="80sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="470dp"
+        />
+
+    <TextView
+        android:id="@+id/timer_point"
+        android:text="@string/timer_point"
+        android:textSize="80sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/name_timer"
+        android:layout_toEndOf="@+id/timer_minute"
+        />
+
+    <TextView
+        android:id="@+id/timer_minute"
+        android:text="@string/timer_minute"
+        android:textSize="100sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/name_timer"
+        android:layout_toEndOf="@+id/name_visitor"
+        android:layout_marginStart="100dp"
+        />
+
+    <TextView
+        android:id="@+id/name_visitor"
+        android:text="@string/name_visitor"
+        android:textSize="100sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        />
+
+    <TextView
+        android:id="@+id/score_visitor"
+        android:text="@string/score_visitor"
+        android:textSize="250sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:id="@+id/name_home"
+        android:text="@string/name_home"
+        android:textSize="100sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignBaseline="@+id/name_visitor"
+        android:layout_alignBottom="@+id/name_visitor"
+        android:layout_alignStart="@+id/score_home"
+        android:layout_marginStart="25dp"
+        />
+
+    <TextView
+        android:id="@+id/score_home"
+        android:text="@string/score_home"
+        android:textSize="250sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginEnd="50dp"
+        android:layout_below="@+id/name_home"
+        android:layout_alignParentEnd="true"
+        />
+
+    <TextView
+        android:id="@+id/timer_seconde"
+        android:text="@string/timer_seconde"
+        android:textSize="100sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/name_timer"
+        android:layout_alignEnd="@+id/name_timer" />
+
+
 </RelativeLayout>
