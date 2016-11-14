@@ -13,4 +13,11 @@
     <dimen name="timer_minute__textSize">100sp</dimen>
     <dimen name="timer_point__textSize">80sp</dimen>
     <dimen name="name_timer__textSize">80sp</dimen>
+    <dimen name="timer_minute_marginStart">100dp</dimen>
+    <dimen name="name_visitor__marginTop">50dp</dimen>
+    <dimen name="name_visitor__marginStart">25dp</dimen>
+    <dimen name="score_visitor__marginStart">50dp</dimen>
+    <dimen name="name_home__marginStart">25dp</dimen>
+    <dimen name="score_home__marginEnd">50dp</dimen>
+    <dimen name="name_timer__marginStart">470dp</dimen>
 </resources>

@@ -13,19 +13,19 @@
     <TextView
         android:id="@+id/name_timer"
         android:text="@string/name_timer"
-        android:textSize="@dimen/name_timer__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="470dp"
+        android:layout_marginStart="@dimen/name_timer__marginStart"
         />
 
     <TextView
         android:id="@+id/timer_point"
         android:text="@string/timer_point"
-        android:textSize="@dimen/timer_point__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -36,61 +36,61 @@
     <TextView
         android:id="@+id/timer_minute"
         android:text="@string/timer_minute"
-        android:textSize="@dimen/timer_minute__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/name_timer"
         android:layout_toEndOf="@+id/name_visitor"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="@dimen/timer_minute_marginStart"
         />
 
     <TextView
         android:id="@+id/name_visitor"
         android:text="@string/name_visitor"
-        android:textSize="@dimen/name_visitor__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/name_visitor__marginTop"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="@dimen/name_visitor__marginStart"
         />
 
     <TextView
         android:id="@+id/score_visitor"
         android:text="@string/score_visitor"
-        android:textSize="@dimen/score_visitor__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="@dimen/score_visitor__marginStart"
         />
 
     <TextView
         android:id="@+id/name_home"
         android:text="@string/name_home"
-        android:textSize="@dimen/name_home__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignBaseline="@+id/name_visitor"
         android:layout_alignBottom="@+id/name_visitor"
         android:layout_alignStart="@+id/score_home"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="@dimen/name_home__marginStart"
         />
 
     <TextView
         android:id="@+id/score_home"
         android:text="@string/score_home"
-        android:textSize="@dimen/score_home__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="@dimen/score_home__marginEnd"
         android:layout_below="@+id/name_home"
         android:layout_alignParentEnd="true"
         />
@@ -98,7 +98,7 @@
     <TextView
         android:id="@+id/timer_seconde"
         android:text="@string/timer_seconde"
-        android:textSize="@dimen/timer_seconde__textSize"
+        android:textSize="@dimen/normal_textSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
