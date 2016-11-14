@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
     <dimen name="normal_textSize">80sp</dimen>
-    <dimen name="timer_minute_marginStart">100dp</dimen>
-    <dimen name="name_visitor__marginTop">50dp</dimen>
-    <dimen name="name_visitor__marginStart">25dp</dimen>
-    <dimen name="score_visitor__marginStart">50dp</dimen>
-    <dimen name="name_home__marginStart">25dp</dimen>
-    <dimen name="score_home__marginEnd">50dp</dimen>
-    <dimen name="name_timer__marginStart">470dp</dimen>
+    <dimen name="normal_plus_textSize">90sp</dimen>
 </resources>

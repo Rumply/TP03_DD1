@@ -10,100 +10,120 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.cegepdrummond.tp03_dd1.MainActivity">
 
-    <TextView
-        android:id="@+id/name_timer"
-        android:text="@string/name_timer"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="@dimen/name_timer__marginStart"
-        />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/timer_point"
-        android:text="@string/timer_point"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/name_timer"
-        android:layout_toEndOf="@+id/timer_minute"
-        />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/timer_minute"
-        android:text="@string/timer_minute"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/name_timer"
-        android:layout_toEndOf="@+id/name_visitor"
-        android:layout_marginStart="@dimen/timer_minute_marginStart"
-        />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/name_visitor"
-        android:text="@string/name_visitor"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_marginTop="@dimen/name_visitor__marginTop"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="@dimen/name_visitor__marginStart"
-        />
+                <TextView
+                    android:id="@+id/name_visitor"
+                    android:text="@string/name_visitor"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignParentTop="true" />
 
-    <TextView
-        android:id="@+id/score_visitor"
-        android:text="@string/score_visitor"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="@dimen/score_visitor__marginStart"
-        />
+                <TextView
+                    android:id="@+id/score_visitor"
+                    android:text="@string/score_visitor"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_below="@+id/name_visitor" />
 
-    <TextView
-        android:id="@+id/name_home"
-        android:text="@string/name_home"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_alignBaseline="@+id/name_visitor"
-        android:layout_alignBottom="@+id/name_visitor"
-        android:layout_alignStart="@+id/score_home"
-        android:layout_marginStart="@dimen/name_home__marginStart"
-        />
+            </RelativeLayout>
 
-    <TextView
-        android:id="@+id/score_home"
-        android:text="@string/score_home"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_marginEnd="@dimen/score_home__marginEnd"
-        android:layout_below="@+id/name_home"
-        android:layout_alignParentEnd="true"
-        />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/timer_seconde"
-        android:text="@string/timer_seconde"
-        android:textSize="@dimen/normal_textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/name_timer"
-        android:layout_alignEnd="@+id/name_timer" />
+                <TextView
+                    android:id="@+id/name_timer"
+                    android:text="@string/name_timer"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/timer_minute"
+                    android:text="@string/timer_minute"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/name_timer"/>
+
+                <TextView
+                    android:id="@+id/timer_point"
+                    android:text="@string/timer_point"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_below="@+id/name_timer"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignEnd="@id/timer_minute"/>
+
+                <TextView
+                    android:id="@+id/timer_seconde"
+                    android:text="@string/timer_seconde"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/name_timer"
+                    android:layout_alignEnd="@id/timer_point"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/name_home"
+                    android:text="@string/name_home"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/score_home"
+                    android:text="@string/score_home"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_below="@+id/name_home"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </TableLayout>
 
 
 </RelativeLayout>
