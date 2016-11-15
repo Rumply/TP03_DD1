@@ -14,34 +14,186 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/name_visitor"
+                        android:text="@string/name_visitor"
+                        android:textSize="@dimen/normal_textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_alignParentTop="true" />
+
+                    <TextView
+                        android:id="@+id/score_visitor"
+                        android:text="@string/score_visitor"
+                        android:textSize="@dimen/score_TextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_below="@+id/name_visitor" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/name_timer"
+                        android:text="@string/name_timer"
+                        android:textSize="@dimen/normal_textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                        android:id="@+id/timer_point"
+                        android:text="@string/timer_point"
+                        android:textSize="@dimen/normal_plus_textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_below="@+id/name_timer"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/timer_minute"
+                        android:text="@string/timer_minute"
+                        android:textSize="@dimen/normal_textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_alignBaseline="@id/timer_point"
+                        android:layout_toStartOf="@+id/timer_point" />
+
+                    <TextView
+                        android:id="@+id/timer_seconde"
+                        android:text="@string/timer_seconde"
+                        android:textSize="@dimen/normal_textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_alignBaseline="@id/timer_point"
+                        android:layout_toEndOf="@+id/timer_point" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/name_home"
+                        android:text="@string/name_home"
+                        android:textSize="@dimen/normal_textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                        android:id="@+id/score_home"
+                        android:text="@string/score_home"
+                        android:textSize="@dimen/score_TextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_below="@+id/name_home"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+        </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/name_visitor"
-                    android:text="@string/name_visitor"
-                    android:textSize="@dimen/normal_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_alignParentTop="true" />
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/listView_punition"
+                    android:background="@drawable/list_divider">
 
-                <TextView
-                    android:id="@+id/score_visitor"
-                    android:text="@string/score_visitor"
-                    android:textSize="@dimen/normal_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_below="@+id/name_visitor" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_divider"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Maxime"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:text="0"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="1"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_divider"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Maxime"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="0"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="1"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_divider"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Maxime"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="0"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="1"/>
+                    </TableRow>
+
+                </TableLayout>
+
 
             </RelativeLayout>
 
@@ -51,7 +203,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/name_timer"
+                    android:id="@+id/name_timer2"
                     android:text="@string/name_timer"
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
@@ -60,36 +212,29 @@
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
-                    android:id="@+id/timer_minute"
+                    android:id="@+id/timer_point2"
+                    android:text="@string/timer_point"
+                    android:textSize="@dimen/normal_plus_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/timer_minute2"
                     android:text="@string/timer_minute"
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/name_timer"/>
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/timer_point"
-                    android:text="@string/timer_point"
-                    android:textSize="@dimen/normal_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_below="@+id/name_timer"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignEnd="@id/timer_minute"/>
-
-                <TextView
-                    android:id="@+id/timer_seconde"
+                    android:id="@+id/timer_seconde2"
                     android:text="@string/timer_seconde"
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/name_timer"
-                    android:layout_alignEnd="@id/timer_point"/>
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -98,7 +243,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/name_home"
+                    android:id="@+id/name_home2"
                     android:text="@string/name_home"
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
@@ -107,23 +252,17 @@
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
-                    android:id="@+id/score_home"
+                    android:id="@+id/score_home2"
                     android:text="@string/score_home"
-                    android:textSize="@dimen/normal_textSize"
+                    android:textSize="@dimen/score_TextSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_below="@+id/name_home"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_centerHorizontal="true" />
             </RelativeLayout>
 
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
     </TableLayout>
-
 
 </RelativeLayout>

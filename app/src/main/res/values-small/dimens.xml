@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="normal_textSize">80sp</dimen>
     <dimen name="normal_plus_textSize">90sp</dimen>
+    <dimen name="score_TextSize">80sp</dimen>
 </resources>
