@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,116 +11,128 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.cegepdrummond.tp03_dd1.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:background="@color/light_gray"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar">
 
-            <TableRow
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/name_visitor"
+                    android:text="@string/name_visitor"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignParentTop="true" />
+
+                <TextView
+                    android:id="@+id/score_visitor"
+                    android:text="@string/score_visitor"
+                    android:textSize="@dimen/score_TextSize"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_below="@+id/name_visitor" />
 
-                    <TextView
-                        android:id="@+id/name_visitor"
-                        android:text="@string/name_visitor"
-                        android:textSize="@dimen/normal_textSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_alignParentTop="true" />
+            </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/score_visitor"
-                        android:text="@string/score_visitor"
-                        android:textSize="@dimen/score_TextSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_below="@+id/name_visitor" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/name_timer"
+                    android:text="@string/name_timer"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                <TextView
+                    android:id="@+id/timer_point"
+                    android:text="@string/timer_point"
+                    android:textSize="@dimen/normal_plus_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_below="@+id/name_timer"
+                    android:layout_centerHorizontal="true" />
 
-                    <TextView
-                        android:id="@+id/name_timer"
-                        android:text="@string/name_timer"
-                        android:textSize="@dimen/normal_textSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:id="@+id/timer_minute"
+                    android:text="@string/timer_minute"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignBaseline="@id/timer_point"
+                    android:layout_toStartOf="@+id/timer_point" />
 
-                    <TextView
-                        android:id="@+id/timer_point"
-                        android:text="@string/timer_point"
-                        android:textSize="@dimen/normal_plus_textSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_below="@+id/name_timer"
-                        android:layout_centerHorizontal="true" />
+                <TextView
+                    android:id="@+id/timer_seconde"
+                    android:text="@string/timer_seconde"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignBaseline="@id/timer_point"
+                    android:layout_toEndOf="@+id/timer_point" />
+            </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/timer_minute"
-                        android:text="@string/timer_minute"
-                        android:textSize="@dimen/normal_textSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_alignBaseline="@id/timer_point"
-                        android:layout_toStartOf="@+id/timer_point" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-                    <TextView
-                        android:id="@+id/timer_seconde"
-                        android:text="@string/timer_seconde"
-                        android:textSize="@dimen/normal_textSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_alignBaseline="@id/timer_point"
-                        android:layout_toEndOf="@+id/timer_point" />
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/name_home"
+                    android:text="@string/name_home"
+                    android:textSize="@dimen/normal_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/name_home"
-                        android:text="@string/name_home"
-                        android:textSize="@dimen/normal_textSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_centerHorizontal="true"/>
-
-                    <TextView
-                        android:id="@+id/score_home"
-                        android:text="@string/score_home"
-                        android:textSize="@dimen/score_TextSize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_below="@+id/name_home"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/score_home"
+                    android:text="@string/score_home"
+                    android:textSize="@dimen/score_TextSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_below="@+id/name_home"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -129,7 +142,7 @@
                 <TableLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/listView_punition"
+                    android:id="@+id/listView_punition_visiteur"
                     android:background="@drawable/list_divider">
 
                     <TableRow
@@ -139,17 +152,25 @@
                         android:layout_weight="1">
 
                         <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Maxime"
-                            android:layout_weight="1"/>
-
-                        <TextView
-                            android:layout_height="wrap_content"
                             android:layout_width="match_parent"
-                            android:text="0"
+                            android:layout_height="match_parent"
+                            android:id="@+id/joueur_visiteur_name_1"
+                            android:text="@string/nom_joueur"
+                            android:textSize="@dimen/normal_textSize"
+                            android:gravity="center"
                             android:background="@drawable/list_divider"
+                            android:layout_weight="2"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/punition_seconde_defaut"
+                            android:textSize="@dimen/normal_textSize"
+                            android:id="@+id/punition_visiteur_seconde_1"
+                            android:background="@drawable/list_divider"
+                            android:gravity="center"
                             android:layout_weight="1"/>
+
                     </TableRow>
 
                     <TableRow
@@ -159,17 +180,25 @@
                         android:layout_weight="1">
 
                         <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Maxime"
-                            android:layout_weight="1"/>
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/joueur_visiteur_name_2"
+                            android:text="@string/nom_joueur"
+                            android:textSize="@dimen/normal_textSize"
+                            android:gravity="center"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="2"/>
 
                         <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/punition_seconde_defaut"
+                            android:textSize="@dimen/normal_textSize"
+                            android:id="@+id/punition_visiteur_seconde_2"
                             android:background="@drawable/list_divider"
+                            android:gravity="center"
                             android:layout_weight="1"/>
+
                     </TableRow>
 
                     <TableRow
@@ -179,17 +208,25 @@
                         android:layout_weight="1">
 
                         <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Maxime"
-                            android:layout_weight="1"/>
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/joueur_visiteur_name_3"
+                            android:text="@string/nom_joueur"
+                            android:textSize="@dimen/normal_textSize"
+                            android:gravity="center"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="2"/>
 
                         <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/punition_seconde_defaut"
+                            android:textSize="@dimen/normal_textSize"
+                            android:id="@+id/punition_visiteur_seconde_3"
                             android:background="@drawable/list_divider"
+                            android:gravity="center"
                             android:layout_weight="1"/>
+
                     </TableRow>
 
                 </TableLayout>
@@ -204,7 +241,7 @@
 
                 <TextView
                     android:id="@+id/name_timer2"
-                    android:text="@string/name_timer"
+                    android:text=""
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -213,7 +250,7 @@
 
                 <TextView
                     android:id="@+id/timer_point2"
-                    android:text="@string/timer_point"
+                    android:text=""
                     android:textSize="@dimen/normal_plus_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -222,7 +259,7 @@
 
                 <TextView
                     android:id="@+id/timer_minute2"
-                    android:text="@string/timer_minute"
+                    android:text=""
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -230,7 +267,7 @@
 
                 <TextView
                     android:id="@+id/timer_seconde2"
-                    android:text="@string/timer_seconde"
+                    android:text=""
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -242,23 +279,97 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/name_home2"
-                    android:text="@string/name_home"
-                    android:textSize="@dimen/normal_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true"/>
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/listView_punition_local"
+                    android:background="@drawable/list_divider">
 
-                <TextView
-                    android:id="@+id/score_home2"
-                    android:text="@string/score_home"
-                    android:textSize="@dimen/score_TextSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_divider"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/joueur_local_name_1"
+                            android:text="@string/nom_joueur"
+                            android:textSize="@dimen/normal_textSize"
+                            android:gravity="center"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="2"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/punition_seconde_defaut"
+                            android:textSize="@dimen/normal_textSize"
+                            android:id="@+id/punition_local_seconde_1"
+                            android:background="@drawable/list_divider"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_divider"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/joueur_local_name_2"
+                            android:text="@string/nom_joueur"
+                            android:textSize="@dimen/normal_textSize"
+                            android:gravity="center"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="2"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/punition_seconde_defaut"
+                            android:textSize="@dimen/normal_textSize"
+                            android:id="@+id/punition_local_seconde_2"
+                            android:background="@drawable/list_divider"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_divider"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/joueur_local_name_3"
+                            android:text="@string/nom_joueur"
+                            android:textSize="@dimen/normal_textSize"
+                            android:gravity="center"
+                            android:background="@drawable/list_divider"
+                            android:layout_weight="2"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/punition_seconde_defaut"
+                            android:textSize="@dimen/normal_textSize"
+                            android:id="@+id/punition_local_seconde_3"
+                            android:background="@drawable/list_divider"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                    </TableRow>
+                </TableLayout>
+
             </RelativeLayout>
 
         </TableRow>

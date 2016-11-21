@@ -11,15 +11,18 @@ import android.widget.TextView;
 public class DecompteTimer extends CountDownTimer {
 
     private int secondsUntilFinished;
-    private TextView mTextView_countDown;
+    private TextView mTextView_countDown_minute;
+    private TextView mTextView_countDown_seconde;
 
     private boolean is_visible;
     private boolean is_timerFini;
 
-    public DecompteTimer(int seconde, boolean is_visible, TextView coundDown) {
+    public DecompteTimer(int seconde, boolean is_visible, TextView coundDown_minute, TextView coundDown_seconde) {
         super(seconde*1000, 1000);
         this.is_visible = is_visible;
-        mTextView_countDown = coundDown;
+        mTextView_countDown_minute = coundDown_minute;
+        mTextView_countDown_seconde = coundDown_seconde;
+
     }
 
     @Override
@@ -35,13 +38,14 @@ public class DecompteTimer extends CountDownTimer {
 
     @Override
     public void onFinish() {
-        mTextView_countDown.setText("0");
+        mTextView_countDown_seconde.setText("0");
         is_timerFini = true;
     }
 
     private void set_Time(long time){
         if (is_visible)
-            mTextView_countDown.setText(String.valueOf(time));
+            mTextView_countDown_seconde.setText(String.valueOf(time % 60));
+            mTextView_countDown_minute.setText(String.valueOf((int) Math.floor(time / 60)));
     }
 
     public boolean is_visible() {
@@ -61,11 +65,11 @@ public class DecompteTimer extends CountDownTimer {
     }
 
     public TextView get_mTextTimer() {
-        return mTextView_countDown;
+        return mTextView_countDown_seconde;
     }
 
     public void set_mTextTimer(TextView mTextTimer) {
-        this.mTextView_countDown = mTextTimer;
+        this.mTextView_countDown_seconde = mTextTimer;
     }
 
 }
