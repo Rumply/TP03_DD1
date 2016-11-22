@@ -11,4 +11,9 @@
     <string name="score_home">0</string>
     <string name="nom_joueur">Nom</string>
     <string name="punition_seconde_defaut">0</string>
+    <string name="numero" />
+    <string name="but" />
+    <string name="buts" />
+    <string name="equipe" />
+    <string name="TAG_ID" />
 </resources>
