@@ -1,10 +1,16 @@
 package ca.cegepdrummond.tp03_dd1;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+
 /**
  * Created by Guillaume on 2016-10-25.
  */
 
 public class EquipeArray {
+
+    private BDHelper bdHelper;
 
     private int id;
     private String nom;
