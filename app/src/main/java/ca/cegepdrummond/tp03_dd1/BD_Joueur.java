@@ -148,4 +148,12 @@ public class BD_Joueur {
         }
         return listeJoueurs;
     }
+
+    public static Cursor recupererTousAsCursor(DBHelper dbHelper) {
+        Cursor cursor;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        cursor = db.rawQuery(String.format("select * from %s order by %s",TABLE_NAME, TBL_FIELD_NOM),null);
+        cursor.moveToFirst();
+        return cursor;
+    }
 }
