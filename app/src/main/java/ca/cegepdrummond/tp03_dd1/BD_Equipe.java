@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Steve on 2016-10-31.
+ * Cree par Steve le 2016-10-31.
  */
 public class BD_Equipe {
 

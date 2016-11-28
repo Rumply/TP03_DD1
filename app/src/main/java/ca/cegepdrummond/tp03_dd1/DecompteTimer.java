@@ -3,56 +3,75 @@ package ca.cegepdrummond.tp03_dd1;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
- * Created by Guillaume on 2016-10-18.
- * Modified by Steve on 2016-11-15.
+ * Cree par Guillaume le 2016-10-18.
+ * Modifie par Steve le 2016-11-15.
  */
 
 public class DecompteTimer extends CountDownTimer {
 
-    private int secondsUntilFinished;
-    private TextView mTextView_countDown_minute;
-    private TextView mTextView_countDown_seconde;
+    private long millisUntilFinished;
 
-    private boolean is_visible;
+    public long get_millisUntilFinished(){
+        return millisUntilFinished;
+    }
+
+    private TextView mTextView_countDown;
+
+    private void set_TextTimer(){
+        String text = "";
+        text = text + seconde;
+        if (minute > 0){
+            text = String.format(Locale.CANADA_FRENCH,"%1$02d:%2$02d", minute,seconde);
+            //text = minute + "," + text;
+        }else{
+            text = String.format(Locale.CANADA_FRENCH,"%1$02d:%2$s", seconde,String.valueOf(milli).substring(0,1));
+            //text = text + ":" + milli;
+        }
+        mTextView_countDown.setText(text);
+    }
+
+    private boolean is_visible = true;
     private boolean is_timerFini;
 
-    public DecompteTimer(int seconde, boolean is_visible, TextView coundDown_minute, TextView coundDown_seconde) {
-        super(seconde*1000, 1000);
-        this.is_visible = is_visible;
-        mTextView_countDown_minute = coundDown_minute;
-        mTextView_countDown_seconde = coundDown_seconde;
+    private int milli;
+    private int seconde;
+    private int minute;
 
+    public DecompteTimer(int seconde, TextView mTextTemps, boolean is_visible) {
+        super(seconde*1000, 1);
+        this.is_visible = is_visible;
+        mTextView_countDown = mTextTemps;
+    }
+
+    public DecompteTimer(long millis, TextView mTextTemps, boolean is_visible) {
+        super(millis, 1);
+        this.is_visible = is_visible;
+        mTextView_countDown = mTextTemps;
     }
 
     @Override
     public void onTick(long millisUntilFinished) {
-        int secondsTemp = Math.round(millisUntilFinished / 1000);
-        if (secondsUntilFinished != secondsTemp){
-            secondsUntilFinished = secondsTemp;
-            if (is_visible){
-                set_Time(secondsUntilFinished);
-            }
-        }
+        this.millisUntilFinished = millisUntilFinished;
+        milli = (int) this.millisUntilFinished % 1000;
+        seconde = Math.round((this.millisUntilFinished / 1000) % 60);
+        minute = (int) Math.floor((millisUntilFinished/1000) / 60);
+        set_TextTimer();
+
     }
 
     @Override
     public void onFinish() {
-        mTextView_countDown_seconde.setText("0");
         is_timerFini = true;
-    }
-
-    private void set_Time(long time){
-        if (is_visible)
-            mTextView_countDown_seconde.setText(String.valueOf(time % 60));
-            mTextView_countDown_minute.setText(String.valueOf((int) Math.floor(time / 60)));
     }
 
     public boolean is_visible() {
         return is_visible;
     }
 
-    public void setIs_visible(boolean is_visible) {
+    public void set_is_visible(boolean is_visible) {
         this.is_visible = is_visible;
     }
 
@@ -62,14 +81,6 @@ public class DecompteTimer extends CountDownTimer {
 
     public void setIs_timerFini(boolean is_timerFini) {
         this.is_timerFini = is_timerFini;
-    }
-
-    public TextView get_mTextTimer() {
-        return mTextView_countDown_seconde;
-    }
-
-    public void set_mTextTimer(TextView mTextTimer) {
-        this.mTextView_countDown_seconde = mTextTimer;
     }
 
 }
