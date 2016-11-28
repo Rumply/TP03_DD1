@@ -33,9 +33,6 @@ public class ListeJoueur extends Activity {
 
         // On va chercher notre listView
         mListViewJoueurs = (ListView) this.findViewById(R.id.listViewJoueurs);
-        // Charger notre layout pour l'entête (Header)
-        //ViewGroup header = (ViewGroup) getLayoutInflater().inflate(R.layout.header_joueur, mListViewJoueurs, false);
-        //mListViewJoueurs.addHeaderView(header, null, false);
         // On va définir le code pour répondre au onItemClick du ListView
         mListViewJoueurs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
