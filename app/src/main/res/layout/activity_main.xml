@@ -87,7 +87,8 @@
                     android:id="@+id/ratingBar"
                     android:layout_below="@+id/timer_minute"
                     android:layout_centerHorizontal="true"
-                    android:numStars="3" />
+                    android:numStars="3"
+                    android:clickable="false" />
 
             </RelativeLayout>
 
@@ -226,42 +227,20 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/BoiteDuBasMilieu">
 
-                <TextView
-                    android:id="@+id/name_timer2"
-                    android:text=""
-                    android:textSize="@dimen/normal_textSize"
+                <Button
+                    android:text="@string/menu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true"/>
+                    android:id="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
 
-                <TextView
-                    android:id="@+id/timer_point2"
-                    android:text=""
-                    android:textSize="@dimen/normal_plus_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true" />
-
-                <TextView
-                    android:id="@+id/timer_minute2"
-                    android:text=""
-                    android:textSize="@dimen/normal_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <TextView
-                    android:id="@+id/timer_seconde2"
-                    android:text=""
-                    android:textSize="@dimen/normal_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
             </RelativeLayout>
+
+
 
             <RelativeLayout
                 android:layout_width="match_parent"

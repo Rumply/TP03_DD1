@@ -65,6 +65,9 @@ public class DecompteTimer extends CountDownTimer {
     @Override
     public void onFinish() {
         is_timerFini = true;
+        milli = 0;
+        set_TextTimer();
+
     }
 
     public boolean is_visible() {
