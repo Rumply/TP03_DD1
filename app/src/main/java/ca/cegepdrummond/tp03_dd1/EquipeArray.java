@@ -1,7 +1,7 @@
 package ca.cegepdrummond.tp03_dd1;
 
 /**
- * Created by Guillaume on 2016-10-25.
+ * Cree par Guillaume le 2016-10-25.
  */
 
 public class EquipeArray {

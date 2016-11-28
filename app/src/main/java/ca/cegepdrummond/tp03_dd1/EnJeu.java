@@ -4,7 +4,7 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 
 /**
- * Created by Steve on 15 nov..
+ * Cree par Steve le 15 nov..
  */
 
 public class EnJeu {

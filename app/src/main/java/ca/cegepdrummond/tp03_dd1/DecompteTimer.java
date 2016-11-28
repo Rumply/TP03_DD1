@@ -4,8 +4,8 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 
 /**
- * Created by Guillaume on 2016-10-18.
- * Modified by Steve on 2016-11-15.
+ * Cree par Guillaume le 2016-10-18.
+ * Modifie par Steve le 2016-11-15.
  */
 
 public class DecompteTimer extends CountDownTimer {
