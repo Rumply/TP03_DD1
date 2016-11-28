@@ -25,10 +25,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:percent:24.0.0'
-<<<<<<< HEAD
-=======
-    compile 'com.android.support:appcompat-v7:25.0.0'
->>>>>>> master
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
 }
