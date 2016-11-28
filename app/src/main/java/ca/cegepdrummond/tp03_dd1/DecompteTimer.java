@@ -6,8 +6,8 @@ import android.widget.TextView;
 import java.util.Locale;
 
 /**
- * Created by Guillaume on 2016-10-18.
- * Modified by Steve on 2016-11-15.
+ * Cree par Guillaume le 2016-10-18.
+ * Modifie par Steve le 2016-11-15.
  */
 
 public class DecompteTimer extends CountDownTimer {
