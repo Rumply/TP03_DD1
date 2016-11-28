@@ -11,9 +11,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.cegepdrummond.tp03_dd1.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:background="@color/light_gray"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar">
 
         <TableRow
             android:layout_width="match_parent"
@@ -62,34 +72,23 @@
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
-                    android:id="@+id/timer_point"
-                    android:text="@string/timer_point"
-                    android:textSize="@dimen/normal_plus_textSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_below="@+id/name_timer"
-                    android:layout_centerHorizontal="true" />
-
-                <TextView
                     android:id="@+id/timer_minute"
                     android:text="@string/timer_minute"
                     android:textSize="@dimen/normal_textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_alignBaseline="@id/timer_point"
-                    android:layout_toStartOf="@+id/timer_point" />
+                    android:layout_below="@+id/name_timer"
+                    android:layout_centerHorizontal="true"/>
 
-                <TextView
-                    android:id="@+id/timer_seconde"
-                    android:text="@string/timer_seconde"
-                    android:textSize="@dimen/normal_textSize"
+                <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_alignBaseline="@id/timer_point"
-                    android:layout_toEndOf="@+id/timer_point" />
+                    android:id="@+id/ratingBar"
+                    android:layout_below="@+id/timer_minute"
+                    android:layout_centerHorizontal="true"
+                    android:numStars="3" />
+
             </RelativeLayout>
 
             <RelativeLayout

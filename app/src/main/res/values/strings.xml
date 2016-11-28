@@ -16,4 +16,7 @@
     <string name="buts" />
     <string name="equipe" />
     <string name="TAG_ID" />
+    <string name="pause_global">Pause Global</string>
+    <string name="one">1</string>
+>>>>>>> e73d29d7c88f6d7e620ceeb474ceb8ddebdbdefc
 </resources>
