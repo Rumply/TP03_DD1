@@ -3,12 +3,14 @@
 
     <string name="name_timer">temps</string>
     <string name="timer_point"> : </string>
-    <string name="timer_minute">00</string>
-    <string name="timer_seconde">00</string>
+    <string name="timer_minute">0</string>
+    <string name="timer_seconde">0</string>
     <string name="name_visitor">visiteur</string>
-    <string name="score_visitor">00</string>
+    <string name="score_visitor">0</string>
     <string name="name_home">local</string>
-    <string name="score_home">00</string>
+    <string name="score_home">0</string>
     <string name="nom_joueur">Nom</string>
     <string name="punition_seconde_defaut">0</string>
+    <string name="pause_global">Pause Global</string>
+    <string name="one">1</string>
 </resources>
