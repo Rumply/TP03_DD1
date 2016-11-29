@@ -1,6 +1,7 @@
 package ca.cegepdrummond.tp03_dd1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuBuilder;
@@ -9,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mViewTimer;
     private Chronometer mTimer;
 
+    Button btn_menu;
 
     //DecompteTimer main_timer;
 
@@ -39,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
         mViewTimer = (TextView) findViewById(R.id.timer_minute);
         main_timer.set_Timer(mViewTimer);
+
+        btn_menu = (Button) findViewById(R.id.button_menu_principal);
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Main_menu.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
