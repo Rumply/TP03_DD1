@@ -30,10 +30,6 @@ public class chronometre_v2{
 
     private boolean is_working = false;
 
-    public chronometre_v2(){
-
-    }
-
 
     /**
      * Cette méthode permet de faire pause au chronomètre.
