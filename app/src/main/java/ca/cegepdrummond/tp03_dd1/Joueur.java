@@ -1,7 +1,7 @@
 package ca.cegepdrummond.tp03_dd1;
 
 /**
- * Created by Steve on 15 nov..
+ * Cree par Steve le 15 nov.
  */
 
 public class Joueur {
@@ -28,7 +28,7 @@ public class Joueur {
             mEquipe = equipe;
         }
 
-        // Setters.
+        // Setters
         // On ne donne pas accès directement aux propriétés de l'objet. On utilise les setters
         // pour affecter des valeurs aux attributs. Ceci permet d'effectuer, entre autre, des validations.
 

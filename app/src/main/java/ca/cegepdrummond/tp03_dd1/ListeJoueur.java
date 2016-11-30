@@ -33,9 +33,6 @@ public class ListeJoueur extends Activity {
 
         // On va chercher notre listView
         mListViewJoueurs = (ListView) this.findViewById(R.id.listViewJoueurs);
-        // Charger notre layout pour l'entête (Header)
-        ViewGroup header = (ViewGroup) getLayoutInflater().inflate(R.layout.header_joueur, mListViewJoueurs, false);
-        mListViewJoueurs.addHeaderView(header, null, false);
         // On va définir le code pour répondre au onItemClick du ListView
         mListViewJoueurs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -48,7 +45,7 @@ public class ListeJoueur extends Activity {
 
                 String mot_nom = getResources().getString(R.string.nom_joueur);
                 String nom = joueurData.getString(joueurData.getColumnIndex(BD_Joueur.TBL_FIELD_NOM));
-                String mot_numero = getResources().getString(R.string.);
+                String mot_numero = getResources().getString(R.string.numero);
                 String numero = joueurData.getString(joueurData.getColumnIndex(BD_Joueur.TBL_FIELD_NUMERO));
                 String mot_buts = getResources().getString(R.string.buts);
                 String buts = joueurData.getString(joueurData.getColumnIndex(BD_Joueur.TBL_FIELD_BUTS));
@@ -68,26 +65,26 @@ public class ListeJoueur extends Activity {
 
     private void chargerJoueurs() {
 
-        // Méthode qui charge les donnees de la table categories dans le listeView
+        // Méthode qui charge les donnees de la table joueurs dans le listeView
 
         DBHelper db = new DBHelper(this);
 
         // ListView utilise un autre layout comme template pour afficher chacun des enregistrements (item_categorie.xml)
 
         // Nous allons donc identifier le nom des champs que nous voulons extraire de la table
-        String[] articleColonnes = new String[] {Articles.TBL_FIELD_TITRE, Articles.TBL_FIELD_QUANTITE, Articles.TBL_FIELD_MAGASIN, Articles.TBL_FIELD_CATEGORIE, Articles.TBL_FIELD_SELECTION};
+        String[] articleColonnes = new String[] {BD_Joueur.TBL_FIELD_NOM, BD_Joueur.TBL_FIELD_NUMERO, BD_Joueur.TBL_FIELD_NUMERO, BD_Joueur.TBL_FIELD_BUTS, BD_Joueur.TBL_FIELD_EQUIPE};
         // Et les Id des vues auxquelles qui seront liées aux champs de la table ci-dessus
-        int[] viewColumns = new int[] {R.id.textViewArticle, R.id.textViewQuantite, R.id.textViewMagasin, R.id.textViewCategorie, R.id.checkBoxSelection};
+        int[] viewColumns = new int[] {R.id.joueur_name};
 
-        mArticlesList = Articles.recupererTousAsCursor(db); // On récupère toutes les données dans notre cursor (déclaré comme propriété globale de la classe.)
+        mJoueursList = BD_Joueur.recupererTousAsCursor(db); // On récupère toutes les données dans notre cursor (déclaré comme propriété globale de la classe.)
         // Les données de notre cursor doivent être transposées dans un adapter (dans notre cas un SimpleCursorAdapter)
         // avec comme paramètres d'initialisation, le layout qu'on utilise pour afficher chacun des enregistrement dans le liste view
         // les colonnes que l'on extrait de la table categories et les Id des view (contrôles) dans lesquels seront affichés ces données.
-        SimpleCursorAdapter adapteurArticles = new SimpleCursorAdapter(this,R.layout.item_article, mArticlesList, articleColonnes, viewColumns,0);
+        SimpleCursorAdapter adapteurJoueurs = new SimpleCursorAdapter(this,R.layout.liste_joueur, mJoueursList, articleColonnes, viewColumns,0);
         // On va faire notre propre liaison entre les données du curseur et les views dans notre layout item_article.xml
-        adapteurArticles.setViewBinder(new ArticleViewBinder());
+        adapteurJoueurs.setViewBinder(new ArticleViewBinder());
         // On assigne notre adapteur
-        mListViewArticles.setAdapter(adapteurArticles);
+        mListViewJoueurs.setAdapter(adapteurJoueurs);
     }
 
 
@@ -96,24 +93,20 @@ public class ListeJoueur extends Activity {
 
         @Override
         public boolean setViewValue(View view, Cursor cursor, int i) {
-            if (cursor.getColumnIndex(Articles.TBL_FIELD_TITRE) == i) {
+            if (cursor.getColumnIndex(BD_Joueur.TBL_FIELD_NOM) == i) {
                 ((TextView) view).setText(cursor.getString(i));
                 return true;
             }
-            else if (cursor.getColumnIndex(Articles.TBL_FIELD_QUANTITE) == i) {
+            else if (cursor.getColumnIndex(BD_Joueur.TBL_FIELD_NUMERO) == i) {
                 ((TextView) view).setText(String.valueOf(cursor.getInt(i)));
                 return true;
             }
-            else if (cursor.getColumnIndex(Articles.TBL_FIELD_MAGASIN) == i) {
+            else if (cursor.getColumnIndex(BD_Joueur.TBL_FIELD_BUTS) == i) {
                 ((TextView) view).setText(cursor.getString(i));
                 return true;
             }
-            else if (cursor.getColumnIndex(Articles.TBL_FIELD_CATEGORIE) == i) {
+            else if (cursor.getColumnIndex(BD_Joueur.TBL_FIELD_EQUIPE) == i) {
                 ((TextView) view).setText(cursor.getString(i));
-                return true;
-            }
-            else if (cursor.getColumnIndex(Articles.TBL_FIELD_SELECTION) == i) {
-                ((CheckBox) view).setChecked(cursor.getInt(i) == 1);
                 return true;
             }
             else

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Steve on 2016-10-25.
+ * Cree par Steve le 2016-10-25.
  */
 public class BD_Joueur {
 
@@ -110,6 +110,29 @@ public class BD_Joueur {
         return listeJoueur;
     }
 
+    public static List<JoueurArray> recupererTousAsJoueurArray(BDHelper bdHelper, String colonne, String valeur) {
+        List<JoueurArray> listeJoueur = new ArrayList<>();
+        SQLiteDatabase bd = bdHelper.getReadableDatabase();
+        String sql = String.format("select * from %s where %s='%s' order by %s", TABLE_NAME, colonne, valeur, TBL_FIELD_ID);
+        Cursor cursor = bd.rawQuery(sql, null);
+        if (cursor != null){
+            if (cursor.moveToFirst()){
+                JoueurArray joueur;
+                do {
+                    joueur = new JoueurArray(
+                            cursor.getInt(cursor.getColumnIndex(TBL_FIELD_ID)),
+                            cursor.getString(cursor.getColumnIndex(TBL_FIELD_NOM)),
+                            cursor.getInt(cursor.getColumnIndex(TBL_FIELD_NUMERO)),
+                            cursor.getInt(cursor.getColumnIndex(TBL_FIELD_BUTS)),
+                            cursor.getString(cursor.getColumnIndex(TBL_FIELD_EQUIPE))
+                    );
+                    listeJoueur.add(joueur);
+                } while (cursor.moveToNext());
+            }
+        }
+        return listeJoueur;
+    }
+
     // Retourne la liste des titres des joueurs sous forme de liste de string
     public static List<String> recupererTousAsArrayString(BDHelper dbHelper) {
         List<String> listeJoueurs = new ArrayList<String>();
@@ -124,5 +147,13 @@ public class BD_Joueur {
             }
         }
         return listeJoueurs;
+    }
+
+    public static Cursor recupererTousAsCursor(DBHelper dbHelper) {
+        Cursor cursor;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        cursor = db.rawQuery(String.format("select * from %s order by %s",TABLE_NAME, TBL_FIELD_NOM),null);
+        cursor.moveToFirst();
+        return cursor;
     }
 }

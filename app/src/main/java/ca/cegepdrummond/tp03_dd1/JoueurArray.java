@@ -1,7 +1,7 @@
 package ca.cegepdrummond.tp03_dd1;
 
 /**
- * Created by Steve on 2016-10-25.
+ * Cree par Steve le 2016-10-25.
  */
 
 public class JoueurArray {
