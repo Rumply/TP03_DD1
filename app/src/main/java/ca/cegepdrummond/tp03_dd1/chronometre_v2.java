@@ -142,7 +142,7 @@ public class chronometre_v2{
      * @param mTextTemps TextView utilisé par le chronomètre.
      */
     public void setup_timer(int time, TextView mTextTemps){
-        timer = new DecompteTimer( time, mTextTemps, mVisible);
+        timer = new DecompteTimer( time, mTextTemps, true);
     }
 
     /**
