@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
     private BDHelper bdHelper;
 
     private TextView mViewTimer;
+    private TextView mViewTimer1;
+    private TextView mViewTimer2;
+    private TextView mViewTimer3;
+    private TextView mViewTimer4;
+    private TextView mViewTimer5;
+    private TextView mViewTimer6;
     private Chronometer mTimer;
     private TextView viewScoreVisitor;
     private TextView viewScoreHome;
@@ -32,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     //DecompteTimer main_timer;
 
     private chronometre_v2 main_timer;
+    private chronometre_v2 main_timer1;
+    private chronometre_v2 main_timer2;
+    private chronometre_v2 main_timer3;
+    private chronometre_v2 main_timer4;
+    private chronometre_v2 main_timer5;
+    private chronometre_v2 main_timer6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +54,33 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         main_timer = new chronometre_v2();
+        main_timer1 = new chronometre_v2();
+        main_timer2 = new chronometre_v2();
+        main_timer3 = new chronometre_v2();
+        main_timer4 = new chronometre_v2();
+        main_timer5 = new chronometre_v2();
+        main_timer6 = new chronometre_v2();
 
         mViewTimer = (TextView) findViewById(R.id.timer_minute);
         main_timer.set_Timer(mViewTimer);
+
+        mViewTimer1 = (TextView) findViewById(R.id.punition_visiteur_seconde_1);
+        main_timer1.set_Timer(mViewTimer1);
+
+        mViewTimer2 = (TextView) findViewById(R.id.punition_visiteur_seconde_2);
+        main_timer2.set_Timer(mViewTimer2);
+
+        mViewTimer3 = (TextView) findViewById(R.id.punition_visiteur_seconde_3);
+        main_timer3.set_Timer(mViewTimer3);
+
+        mViewTimer4 = (TextView) findViewById(R.id.punition_local_seconde_1);
+        main_timer4.set_Timer(mViewTimer4);
+
+        mViewTimer5 = (TextView) findViewById(R.id.punition_local_seconde_2);
+        main_timer5.set_Timer(mViewTimer5);
+
+        mViewTimer6 = (TextView) findViewById(R.id.punition_local_seconde_3);
+        main_timer6.set_Timer(mViewTimer6);
 
         viewScoreVisitor = (TextView) findViewById(R.id.score_visitor);
         viewScoreVisitor.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +139,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void pause_global(){
         main_timer.toggle_chrono();
+        main_timer1.toggle_chrono();
+        main_timer2.toggle_chrono();
+        main_timer3.toggle_chrono();
+        main_timer4.toggle_chrono();
+        main_timer5.toggle_chrono();
+        main_timer6.toggle_chrono();
         Toast.makeText(this, "Clique sur pause global", Toast.LENGTH_SHORT).show();
     }
 
@@ -111,6 +153,36 @@ public class MainActivity extends AppCompatActivity {
         main_timer.set_Timer(main_timer.get_ViewTimer());
         main_timer.setup_timer();
         main_timer.start();
+
+        main_timer1.set_Time(temps * 1000);
+        main_timer1.set_Timer(main_timer1.get_ViewTimer());
+        main_timer1.setup_timer();
+        main_timer1.start();
+
+        main_timer2.set_Time(temps * 1000);
+        main_timer2.set_Timer(main_timer2.get_ViewTimer());
+        main_timer2.setup_timer();
+        main_timer2.start();
+
+        main_timer3.set_Time(temps * 1000);
+        main_timer3.set_Timer(main_timer3.get_ViewTimer());
+        main_timer3.setup_timer();
+        main_timer3.start();
+
+        main_timer4.set_Time(temps * 1000);
+        main_timer4.set_Timer(main_timer4.get_ViewTimer());
+        main_timer4.setup_timer();
+        main_timer4.start();
+
+        main_timer5.set_Time(temps * 1000);
+        main_timer5.set_Timer(main_timer5.get_ViewTimer());
+        main_timer5.setup_timer();
+        main_timer5.start();
+
+        main_timer6.set_Time(temps * 1000);
+        main_timer6.set_Timer(main_timer6.get_ViewTimer());
+        main_timer6.setup_timer();
+        main_timer6.start();
     }
 
     @Override
