@@ -45,7 +45,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_alignParentTop="true" />
 
-                <TextView
+                <Button
                     android:id="@+id/score_visitor"
                     android:text="@string/score_visitor"
                     android:textSize="@dimen/score_TextSize"

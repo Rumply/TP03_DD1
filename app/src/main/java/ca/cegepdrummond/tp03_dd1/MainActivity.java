@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mViewTimer;
     private Chronometer mTimer;
+    private TextView viewScoreVisitor;
+    private TextView viewScoreHome;
 
     Button btn_menu;
 
@@ -44,6 +46,22 @@ public class MainActivity extends AppCompatActivity {
         mViewTimer = (TextView) findViewById(R.id.timer_minute);
         main_timer.set_Timer(mViewTimer);
 
+        viewScoreVisitor = (TextView) findViewById(R.id.score_visitor);
+        viewScoreVisitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                plusUnScore(viewScoreVisitor);
+            }
+        });
+
+        viewScoreHome = (TextView) findViewById(R.id.score_home);
+        viewScoreHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                plusUnScore(viewScoreHome);
+            }
+        });
+
         btn_menu = (Button) findViewById(R.id.button_menu_principal);
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void plusUnScore(TextView scoreEquipe) {
+        String score = String.valueOf(scoreEquipe.getText());
+        scoreEquipe.setText(String.valueOf(Integer.valueOf(score) + 1));
     }
 
     @Override
