@@ -13,10 +13,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private Chronometer mTimer;
     private TextView viewScoreVisitor;
     private TextView viewScoreHome;
+
+    private RatingBar ratingBar;
 
     Button btn_menu;
 
@@ -89,12 +93,26 @@ public class MainActivity extends AppCompatActivity {
                 plusUnScore(viewScoreVisitor);
             }
         });
+        viewScoreVisitor.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                moinsUnScore(viewScoreVisitor);
+                return false;
+            }
+        });
 
         viewScoreHome = (TextView) findViewById(R.id.score_home);
         viewScoreHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 plusUnScore(viewScoreHome);
+            }
+        });
+        viewScoreHome.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                moinsUnScore(viewScoreHome);
+                return false;
             }
         });
 
@@ -107,11 +125,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar.setIsIndicator(true);
+        // Période en cours
+        ratingBar.setRating(1);
     }
 
     private void plusUnScore(TextView scoreEquipe) {
         String score = String.valueOf(scoreEquipe.getText());
         scoreEquipe.setText(String.valueOf(Integer.valueOf(score) + 1));
+    }
+
+    private void moinsUnScore(TextView scoreEquipe) {
+        String score = String.valueOf(scoreEquipe.getText());
+        scoreEquipe.setText(String.valueOf(Integer.valueOf(score) - 1));
     }
 
     @Override

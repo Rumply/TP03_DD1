@@ -45,7 +45,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_alignParentTop="true" />
 
-                <Button
+                <TextView
                     android:id="@+id/score_visitor"
                     android:text="@string/score_visitor"
                     android:textSize="@dimen/score_TextSize"
@@ -88,7 +88,7 @@
                     android:layout_below="@+id/timer_minute"
                     android:layout_centerHorizontal="true"
                     android:numStars="3"
-                    android:clickable="false" />
+                    android:stepSize="1"/>
 
             </RelativeLayout>
 
